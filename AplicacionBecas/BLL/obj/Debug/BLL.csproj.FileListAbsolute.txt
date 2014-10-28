@@ -1,0 +1,9 @@
+C:\Users\Prophet\Desktop\AplicacionBecas\BLL\bin\Debug\BLL.dll
+C:\Users\Prophet\Desktop\AplicacionBecas\BLL\bin\Debug\BLL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecas\BLL\bin\Debug\DAL.dll
+C:\Users\Prophet\Desktop\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.dll
+C:\Users\Prophet\Desktop\AplicacionBecas\BLL\bin\Debug\DAL.pdb
+C:\Users\Prophet\Desktop\AplicacionBecas\BLL\bin\Debug\EntitiesLayer.pdb
+C:\Users\Prophet\Desktop\AplicacionBecas\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Prophet\Desktop\AplicacionBecas\BLL\obj\Debug\BLL.dll
+C:\Users\Prophet\Desktop\AplicacionBecas\BLL\obj\Debug\BLL.pdb
