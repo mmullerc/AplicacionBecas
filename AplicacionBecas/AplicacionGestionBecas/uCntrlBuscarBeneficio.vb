@@ -155,4 +155,7 @@ Public Class uCntrlBuscarBeneficio
         End If
     End Sub
 
+    Private Sub dtaBuscarBeneficio_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtaBuscarBeneficio.CellContentClick
+
+    End Sub
 End Class

@@ -36,7 +36,6 @@ Partial Class uCntrlBuscarBeneficio
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnMantenimiento = New System.Windows.Forms.Button()
         Me.pctbxBeneficios = New System.Windows.Forms.PictureBox()
-
         CType(Me.dtaBuscarBeneficio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pctbxBeneficios, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -129,7 +128,6 @@ Partial Class uCntrlBuscarBeneficio
         '
         'pctbxBeneficios
         '
-
         Me.pctbxBeneficios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pctbxBeneficios.Location = New System.Drawing.Point(156, 197)
         Me.pctbxBeneficios.Name = "pctbxBeneficios"
@@ -137,18 +135,6 @@ Partial Class uCntrlBuscarBeneficio
         Me.pctbxBeneficios.TabIndex = 2
         Me.pctbxBeneficios.TabStop = False
         '
-        'UCtrlEliminarBeneficio1
-
-        'UCtrlModificarBeneficio2
-        '
-  
-        '
-        'UCtrlModificarBeneficio1
-        '
- 
-        '
-        'ventana
- 
         'uCntrlBuscarBeneficio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 23.0!)
@@ -156,7 +142,6 @@ Partial Class uCntrlBuscarBeneficio
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.dtaBuscarBeneficio)
-
         Me.Controls.Add(Me.btnMantenimiento)
         Me.Controls.Add(Me.pctbxBeneficios)
         Me.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
