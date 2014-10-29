@@ -4,7 +4,6 @@ Imports System.Drawing
 
 Public Class uCntrlBuscarBeneficio
 
-     
     Private Sub PantallaConsultarBeneficio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         listarBeneficios()
@@ -36,9 +35,14 @@ Public Class uCntrlBuscarBeneficio
 
     End Sub
     Private Sub btnMantenimiento_Click(sender As Object, e As EventArgs) Handles btnMantenimiento.Click
-        'ventana.Location = New Point(290, 48)
-        'ventana.BringToFront()
-        'ventana.Show()
+        Dim uCtrlRegistrarBeneficio As New uCtrlRegistrarBeneficio
+
+        frmPrincipal.Controls.Add(uCtrlRegistrarBeneficio)
+        uCtrlRegistrarBeneficio.getFrmBuscar(Me)
+        uCtrlRegistrarBeneficio.Location = New Point(290, 48)
+        uCtrlRegistrarBeneficio.BringToFront()
+        uCtrlRegistrarBeneficio.Show()
+
 
     End Sub
 
@@ -63,55 +67,16 @@ Public Class uCntrlBuscarBeneficio
 
         If combo.SelectedItem = "Ver" Then
 
-            Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
-
-
-            Dim uCtrlConsultarBeneficio As New uCtrlConsultarBeneficio
-
-            uCtrlConsultarBeneficio.recibirInfo(nombre)
-            frmPrincipal.Controls.Add(uCtrlConsultarBeneficio)
-            uCtrlConsultarBeneficio.BringToFront()
-            uCtrlConsultarBeneficio.Show()
-            uCtrlConsultarBeneficio.Location = New Point(200, 150)
-            Me.Hide()
-
+            verBeneficios()
 
         ElseIf combo.SelectedItem = "Editar" Then
 
-            Dim id As Integer = dtaBuscarBeneficio.CurrentRow.Cells(0).Value
-            Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
-            Dim porcentaje As Double = dtaBuscarBeneficio.CurrentRow.Cells(2).Value
-            Dim aplicacion As String = dtaBuscarBeneficio.CurrentRow.Cells(3).Value
-
-
-
-            Dim uCtrlModificarBeneficio As New uCtrlModificarBeneficio
-
-
-            frmPrincipal.Controls.Add(uCtrlModificarBeneficio)
-            uCtrlModificarBeneficio.getFrmBuscar(Me)
-            uCtrlModificarBeneficio.recieveData(id, nombre, porcentaje, aplicacion)
-            uCtrlModificarBeneficio.BringToFront()
-            uCtrlModificarBeneficio.Show()
-            uCtrlModificarBeneficio.Location = New Point(290, 48)
+            editarBeneficios()
 
         ElseIf combo.SelectedItem = "Eliminar" Then
 
-            Dim id As Integer = dtaBuscarBeneficio.CurrentRow.Cells(0).Value
-            Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
-            Dim porcentaje As Double = dtaBuscarBeneficio.CurrentRow.Cells(2).Value
-            Dim aplicacion As String = dtaBuscarBeneficio.CurrentRow.Cells(3).Value
+            eliminarBeneficios()
 
-            Dim uCtrlEliminarBeneficio As New uCtrlEliminarBeneficio
-
-            frmPrincipal.Controls.Add(uCtrlEliminarBeneficio)
-            uCtrlEliminarBeneficio.recibirInfo(id, nombre, porcentaje, aplicacion)
-            uCtrlEliminarBeneficio.BringToFront()
-            uCtrlEliminarBeneficio.Show()
-            uCtrlEliminarBeneficio.Location = New Point(290, 48)
-
-            dtaBuscarBeneficio.Rows.Clear()
-            listarBeneficios()
         End If
 
     End Sub
@@ -131,31 +96,108 @@ Public Class uCntrlBuscarBeneficio
 
         parametro = txtBuscar.Text
 
-        If parametro = Nothing Then
+        Try
+            If parametro = Nothing Then
 
 
-            listarBeneficios()
+                listarBeneficios()
 
-        Else
+            Else
 
-            Dim beneficio As Beneficio
+                Dim beneficio As Beneficio
 
-            dtaBuscarBeneficio.Rows.Clear()
-            beneficio = objGestorBeneficio.buscarPorNombre(parametro)
+                dtaBuscarBeneficio.Rows.Clear()
+                beneficio = objGestorBeneficio.buscarPorNombre(parametro)
 
-            dtaBuscarBeneficio.Rows.Add(1)
+                dtaBuscarBeneficio.Rows.Add(1)
 
-            dtaBuscarBeneficio.Rows(0).Cells(0).Value = beneficio.Id
-            dtaBuscarBeneficio.Rows(0).Cells(1).Value = beneficio.Nombre
-            dtaBuscarBeneficio.Rows(0).Cells(2).Value = beneficio.Porcentaje
-            dtaBuscarBeneficio.Rows(0).Cells(3).Value = beneficio.Aplicacion
-            dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = False
-            dtaBuscarBeneficio.Columns("dtaId").Visible = False
+                dtaBuscarBeneficio.Rows(0).Cells(0).Value = beneficio.Id
+                dtaBuscarBeneficio.Rows(0).Cells(1).Value = beneficio.Nombre
+                dtaBuscarBeneficio.Rows(0).Cells(2).Value = beneficio.Porcentaje
+                dtaBuscarBeneficio.Rows(0).Cells(3).Value = beneficio.Aplicacion
+                dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = False
+                dtaBuscarBeneficio.Columns("dtaId").Visible = False
 
-        End If
+            End If
+
+        Catch
+
+            MsgBox("El beneficio no existe")
+
+        End Try
+    End Sub
+    '//////////////////////////////////////////////////////////////////////////////////////////
+    'El ASIGNAR AHORA LO HACE MARIA, NO VA AQUI EN BENEFICIOS!!!!
+
+    'Private Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
+
+    '    Dim uCtrlAsignarBeneficios As New uCtrlAsignarBeneficios()
+
+    '    frmPrincipal.Controls.Add(uCtrlAsignarBeneficios)
+    '    uCtrlAsignarBeneficios.BringToFront()
+    '    uCtrlAsignarBeneficios.Show()
+    '    uCtrlAsignarBeneficios.Location = New Point(250, 50)
+
+    'End Sub
+    '//////////////////////////////////////////////////////////////////////////////////////////
+
+    Private Sub verBeneficios()
+        Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
+
+
+        Dim uCtrlConsultarBeneficio As New uCtrlConsultarBeneficio
+
+        uCtrlConsultarBeneficio.recibirInfo(nombre)
+        frmPrincipal.Controls.Add(uCtrlConsultarBeneficio)
+        uCtrlConsultarBeneficio.BringToFront()
+        uCtrlConsultarBeneficio.Show()
+        uCtrlConsultarBeneficio.Location = New Point(200, 150)
+        Me.Hide()
+
+
     End Sub
 
-    Private Sub dtaBuscarBeneficio_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtaBuscarBeneficio.CellContentClick
+    Private Sub editarBeneficios()
+
+
+        Dim id As Integer = dtaBuscarBeneficio.CurrentRow.Cells(0).Value
+        Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
+        Dim porcentaje As Double = dtaBuscarBeneficio.CurrentRow.Cells(2).Value
+        Dim aplicacion As String = dtaBuscarBeneficio.CurrentRow.Cells(3).Value
+
+
+
+        Dim uCtrlModificarBeneficio As New uCtrlModificarBeneficio
+
+
+        frmPrincipal.Controls.Add(uCtrlModificarBeneficio)
+        uCtrlModificarBeneficio.getFrmBuscar(Me)
+        uCtrlModificarBeneficio.recieveData(id, nombre, porcentaje, aplicacion)
+        uCtrlModificarBeneficio.BringToFront()
+        uCtrlModificarBeneficio.Show()
+        uCtrlModificarBeneficio.Location = New Point(290, 48)
+
+    End Sub
+
+    Private Sub eliminarBeneficios()
+
+
+        Dim id As Integer = dtaBuscarBeneficio.CurrentRow.Cells(0).Value
+        Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
+        Dim porcentaje As Double = dtaBuscarBeneficio.CurrentRow.Cells(2).Value
+        Dim aplicacion As String = dtaBuscarBeneficio.CurrentRow.Cells(3).Value
+
+        Dim uCtrlEliminarBeneficio As New uCtrlEliminarBeneficio
+
+        frmPrincipal.Controls.Add(uCtrlEliminarBeneficio)
+        uCtrlEliminarBeneficio.getUCtrlInstance(Me)
+        uCtrlEliminarBeneficio.recibirInfo(id, nombre, porcentaje, aplicacion)
+        uCtrlEliminarBeneficio.BringToFront()
+        uCtrlEliminarBeneficio.Show()
+        uCtrlEliminarBeneficio.Location = New Point(290, 48)
+
+        dtaBuscarBeneficio.Rows.Clear()
+        listarBeneficios()
 
     End Sub
 End Class

@@ -1,5 +1,12 @@
 ﻿Public Class uCtrlRegistrarBeneficio
 
+    Dim uCntrlBuscarBeneficio As uCntrlBuscarBeneficio
+
+    Public Sub getFrmBuscar(puCntrlBuscarBeneficio As uCntrlBuscarBeneficio)
+
+        uCntrlBuscarBeneficio = puCntrlBuscarBeneficio
+    End Sub
+
     ''' <summary>
     ''' Este método toma los valores ingresados en la pantalla y los envía al GestorBeneficios para crear un beneficio.
     ''' </summary>
@@ -29,6 +36,14 @@
             MsgBox("El Porcentaje debe ser un numero")
 
         End If
+
+        uCntrlBuscarBeneficio.dtaBuscarBeneficio.Rows.Clear()
+        uCntrlBuscarBeneficio.listarBeneficios()
+
+        txtNombre.Clear()
+        txPorcentaje.Clear()
+        txtAplicacion.Clear()
+
     End Sub
 
     ''' <summary>

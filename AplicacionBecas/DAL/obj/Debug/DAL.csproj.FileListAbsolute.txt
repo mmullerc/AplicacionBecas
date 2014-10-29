@@ -7,3 +7,12 @@ C:\Users\Prophet\Desktop\AplicacionBecas\DAL\obj\Debug\DAL.Properties.Resources.
 C:\Users\Prophet\Desktop\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
 C:\Users\Prophet\Desktop\AplicacionBecas\DAL\obj\Debug\DAL.dll
 C:\Users\Prophet\Desktop\AplicacionBecas\DAL\obj\Debug\DAL.pdb
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.dll
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\DAL.pdb
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.dll
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\bin\Debug\EntitiesLayer.pdb
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.dll
+C:\Users\Mathias\Documents\GitHub\AplicacionBecas\AplicacionBecas\DAL\obj\Debug\DAL.pdb

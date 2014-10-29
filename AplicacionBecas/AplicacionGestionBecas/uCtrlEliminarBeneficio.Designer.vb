@@ -40,7 +40,6 @@ Partial Class uCtrlEliminarBeneficio
         '
         'btnCancelar
         '
-
         Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI Light", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.White
         Me.btnCancelar.Location = New System.Drawing.Point(264, 115)
