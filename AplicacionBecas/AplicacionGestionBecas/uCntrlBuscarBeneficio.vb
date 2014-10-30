@@ -17,6 +17,9 @@ Public Class uCntrlBuscarBeneficio
     ''' <author>Mathias Muller</author>
     Public Sub listarBeneficios()
 
+        Try
+
+        
         Dim listaBeneficios As New List(Of Beneficio)
         listaBeneficios = objGestorBeneficio.buscarBeneficios()
 
@@ -31,7 +34,13 @@ Public Class uCntrlBuscarBeneficio
             dtaBuscarBeneficio.Columns("dtaAplicabilidad").Visible = False
             dtaBuscarBeneficio.Columns("dtaId").Visible = False
 
-        Next i
+            Next i
+
+        Catch
+
+            MsgBox("Debe crear un beneficio")
+
+        End Try
 
     End Sub
     Private Sub btnMantenimiento_Click(sender As Object, e As EventArgs) Handles btnMantenimiento.Click
@@ -232,4 +241,6 @@ Public Class uCntrlBuscarBeneficio
         listarBeneficios()
 
     End Sub
+
+
 End Class
