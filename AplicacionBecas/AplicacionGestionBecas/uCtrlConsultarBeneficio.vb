@@ -4,7 +4,13 @@ Public Class uCtrlConsultarBeneficio
 
     Dim nombre As String
 
-
+    ''' <summary>
+    ''' Trae del Gestor, una instancia de un beneficio y lo muestra en un datagrid.
+    ''' </summary>
+    ''' <author>Mathias Muller</author>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub uCtrlConsultarBeneficio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim beneficio As Beneficio
@@ -23,14 +29,16 @@ Public Class uCtrlConsultarBeneficio
 
     End Sub
 
+    ''' <summary>
+    ''' Recibe el nombre del beneficio que se va a mostrar
+    ''' </summary>
+    ''' <author>Mathias Muller</author>
+    ''' <param name="pnombre">Es el nombre del beneficio</param>
+    ''' <remarks></remarks>
     Public Sub recibirInfo(ByVal pnombre As String)
 
         nombre = pnombre
 
     End Sub
 
-
-    Private Sub pctbxBeneficios_Click(sender As Object, e As EventArgs) Handles pctbxBeneficios.Click
-
-    End Sub
 End Class

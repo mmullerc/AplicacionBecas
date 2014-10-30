@@ -2,6 +2,11 @@
 
     Dim uCntrlBuscarBeneficio As uCntrlBuscarBeneficio
 
+    ''' <summary>
+    ''' Setea una instancia del UsrControlBuscarBeneficio
+    ''' </summary>
+    ''' <param name="puCntrlBuscarBeneficio">Es la instancia del usrControl</param>
+    ''' <remarks></remarks>
     Public Sub getFrmBuscar(puCntrlBuscarBeneficio As uCntrlBuscarBeneficio)
 
         uCntrlBuscarBeneficio = puCntrlBuscarBeneficio

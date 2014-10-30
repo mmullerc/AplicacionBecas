@@ -6,7 +6,56 @@ AplicacionGestionBecas
 </name>
 </assembly>
 <members>
-<member name="M:AplicacionGestionBecas.uCtrlModificarBeneficio.recieveData(System.Int32,System.String,System.Double,System.String)">
+<member name="M:AplicacionGestionBecas.uCtrlConsultarBeneficio.uCtrlConsultarBeneficio_Load(System.Object,System.EventArgs)">
+	<summary>
+ Trae del Gestor, una instancia de un beneficio y lo muestra en un datagrid.
+ </summary>
+	<author>Mathias Muller</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AplicacionGestionBecas.uCtrlConsultarBeneficio.recibirInfo(System.String)">
+	<summary>
+ Recibe el nombre del beneficio que se va a mostrar
+ </summary>
+	<author>Mathias Muller</author>
+	<param name="pnombre">Es el nombre del beneficio</param>
+	<remarks></remarks>
+</member><member name="M:AplicacionGestionBecas.uCtrlEliminarBeneficio.getUCtrlInstance(AplicacionGestionBecas.uCntrlBuscarBeneficio)">
+	<summary>
+ Recibe una instancia del userControlBuscarBeneficio y la setea.
+ </summary>
+	<author>Mathias Muller</author>
+	<param name="puCtrl">Es una instancia del user control</param>
+	<remarks></remarks>
+</member><member name="M:AplicacionGestionBecas.uCtrlEliminarBeneficio.recibirInfo(System.Int32,System.String,System.Double,System.String)">
+	<summary>
+ Recibe la informaciondel beneficio que sera eliminado.
+ </summary>
+	<author>Mathias Muller</author>
+	<param name="pid">Es el id del beneficio</param>
+	<param name="pnombre">El nombre del beneficio</param>
+	<param name="pporcentaje">El porcentaje del beneficio</param>
+	<param name="paplicabilidad">La aplicabilidad del beneficio</param>
+	<remarks></remarks>
+</member><member name="M:AplicacionGestionBecas.uCtrlEliminarBeneficio.btnAceptar_Click(System.Object,System.EventArgs)">
+	<summary>
+ Envia los parametros del beneficio al gestor.
+ Refresa la el dataGrid con la informacion nueva.
+ </summary>
+	<author>Mathias Muller</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AplicacionGestionBecas.uCtrlEliminarBeneficio.btnCancelar_Click(System.Object,System.EventArgs)">
+	<summary>
+ Esconde y destruye el popup de eliminar beneficio.
+ </summary>
+	<author>Mathias Muller</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AplicacionGestionBecas.uCtrlModificarBeneficio.recieveData(System.Int32,System.String,System.Double,System.String)">
 	<summary>
  Este método se encarga de 'Setear' los textbox con los parametros recibidos
  </summary>
@@ -81,6 +130,52 @@ AplicacionGestionBecas
  Llena el data grid con la lista de beneficios.
  </summary>
 	<author>Mathias Muller</author>
+</member><member name="M:AplicacionGestionBecas.uCntrlBuscarBeneficio.dtaBuscarBeneficio_EditingControlShowing(System.Object,System.Windows.Forms.DataGridViewEditingControlShowingEventArgs)">
+	<summary>
+ Este método agarra el valor seleccionado del combobox y crea un evento
+ </summary>
+	<author>Mathias Muller</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AplicacionGestionBecas.uCntrlBuscarBeneficio.ComboBox_SelectionChangeCommitted(System.Object,System.EventArgs)">
+	<summary>
+ Dependiendo de la seleccion del usuario, el sistema realiza diferentes acciones.
+ --&gt;La opcion ver: consulta un beneficio.
+ --&gt;La opcion Editar: muestra un popup, que permite editar un beneficio.
+ --&gt;La opcion Eliminar: muestra una alerta que permite eliminar un beneficio.
+ </summary>
+	<author>Mathias Muller</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AplicacionGestionBecas.uCntrlBuscarBeneficio.btnBuscar_Click(System.Object,System.EventArgs)">
+	<summary>
+ Busca un beneficio dependiendo del valor del parametro
+ Si el parametro es NULL, entonces la lista se referesca nada mas
+ </summary>
+	<author>Mathias Muller</author>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:AplicacionGestionBecas.uCntrlBuscarBeneficio.verBeneficios">
+	<summary>
+ consulta un beneficio
+ </summary>
+	<author>Mathias Muller</author>
+	<remarks></remarks>
+</member><member name="M:AplicacionGestionBecas.uCntrlBuscarBeneficio.editarBeneficios">
+	<summary>
+ Edita un beneficio
+ </summary>
+	<author>Mathias Muller</author>
+	<remarks></remarks>
+</member><member name="M:AplicacionGestionBecas.uCntrlBuscarBeneficio.eliminarBeneficios">
+	<summary>
+ Elimina un beneficio
+ </summary>
+	<author>Mathias Muller</author>
+	<remarks></remarks>
 </member><member name="M:AplicacionGestionBecas.uCtrlModificarRol.recieveData(System.String)">
 	<summary> Descripción del método o clase</summary>
 	<author> Autor del código.</author>
@@ -100,6 +195,12 @@ AplicacionGestionBecas
 	<summary> Descripción del método o clase</summary>
 	<author> Autor del código.</author>
 	<name> Parámetros que recibe el método </name>
+</member><member name="M:AplicacionGestionBecas.uCtrlRegistrarBeneficio.getFrmBuscar(AplicacionGestionBecas.uCntrlBuscarBeneficio)">
+	<summary>
+ Setea una instancia del UsrControlBuscarBeneficio
+ </summary>
+	<param name="puCntrlBuscarBeneficio">Es la instancia del usrControl</param>
+	<remarks></remarks>
 </member><member name="M:AplicacionGestionBecas.uCtrlRegistrarBeneficio.btnAñadir_Click(System.Object,System.EventArgs)">
 	<summary>
  Este método toma los valores ingresados en la pantalla y los envía al GestorBeneficios para crear un beneficio.

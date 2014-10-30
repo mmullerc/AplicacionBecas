@@ -45,7 +45,13 @@ Public Class uCntrlBuscarBeneficio
 
 
     End Sub
-
+    ''' <summary>
+    ''' Este método agarra el valor seleccionado del combobox y crea un evento
+    ''' </summary>
+    ''' <author>Mathias Muller</author>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub dtaBuscarBeneficio_EditingControlShowing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtaBuscarBeneficio.EditingControlShowing
         ' Only for a DatagridComboBoxColumn at ColumnIndex 1.
         If dtaBuscarBeneficio.CurrentCell.ColumnIndex = 4 Then
@@ -61,6 +67,16 @@ Public Class uCntrlBuscarBeneficio
         End If
     End Sub
 
+    ''' <summary>
+    ''' Dependiendo de la seleccion del usuario, el sistema realiza diferentes acciones.
+    ''' -->La opcion ver: consulta un beneficio.
+    ''' -->La opcion Editar: muestra un popup, que permite editar un beneficio.
+    ''' -->La opcion Eliminar: muestra una alerta que permite eliminar un beneficio.
+    ''' </summary>
+    ''' <author>Mathias Muller</author>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub ComboBox_SelectionChangeCommitted(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Dim combo As ComboBox = CType(sender, ComboBox)
@@ -81,15 +97,15 @@ Public Class uCntrlBuscarBeneficio
 
     End Sub
 
-    Private Sub btnEliminaar_Click(sender As Object, e As EventArgs)
 
-        Dim selectedRows As Integer = dtaBuscarBeneficio.Rows.GetRowCount(DataGridViewElementStates.Selected)
-
-        Dim selected As Integer
-
-        selected = dtaBuscarBeneficio.Rows(0).Cells(1).Value
-    End Sub
-
+    ''' <summary>
+    ''' Busca un beneficio dependiendo del valor del parametro
+    ''' Si el parametro es NULL, entonces la lista se referesca nada mas
+    ''' </summary>
+    ''' <author>Mathias Muller</author>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
 
         Dim parametro As String
@@ -141,9 +157,13 @@ Public Class uCntrlBuscarBeneficio
     'End Sub
     '//////////////////////////////////////////////////////////////////////////////////////////
 
+    ''' <summary>
+    ''' consulta un beneficio
+    ''' </summary>
+    ''' <author>Mathias Muller</author>
+    ''' <remarks></remarks>
     Private Sub verBeneficios()
         Dim nombre As String = dtaBuscarBeneficio.CurrentRow.Cells(1).Value
-
 
         Dim uCtrlConsultarBeneficio As New uCtrlConsultarBeneficio
 
@@ -157,6 +177,11 @@ Public Class uCntrlBuscarBeneficio
 
     End Sub
 
+    ''' <summary>
+    ''' Edita un beneficio
+    ''' </summary>
+    ''' <author>Mathias Muller</author>
+    ''' <remarks></remarks>
     Private Sub editarBeneficios()
 
 
@@ -178,6 +203,13 @@ Public Class uCntrlBuscarBeneficio
         uCtrlModificarBeneficio.Location = New Point(290, 48)
 
     End Sub
+
+
+    ''' <summary>
+    ''' Elimina un beneficio
+    ''' </summary>
+    ''' <author>Mathias Muller</author>
+    ''' <remarks></remarks>
 
     Private Sub eliminarBeneficios()
 
