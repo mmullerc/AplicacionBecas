@@ -19,7 +19,7 @@ Public Class UctrlListarYBuscarUsuario
             dgUsuarios.Rows.Add(1)
             dgUsuarios.Rows(i).Cells(0).Value = listaUsuarios.Item(i).identificacion
             dgUsuarios.Rows(i).Cells(1).Value = listaUsuarios.Item(i).primerNombre & " " & listaUsuarios.Item(i).primerApellido & " " & listaUsuarios.Item(i).segundoApellido
-            dgUsuarios.Rows(i).Cells(2).Value = listaUsuarios.Item(i).rol.Nombre
+            'dgUsuarios.Rows(i).Cells(2).Value = listaUsuarios.Item(i).rol.Nombre
         Next
 
     End Sub

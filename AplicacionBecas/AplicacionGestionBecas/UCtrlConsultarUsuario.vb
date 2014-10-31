@@ -7,9 +7,6 @@ Public Class UCtrlConsultarUsuario
         parametro = pparametro
     End Sub
 
-
-
-
     Private Sub UCtrlConsultarUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim objUsuario As Usuario = objGestorUsuario.buscarUnUsuario(Me.parametro)
